@@ -14,5 +14,5 @@
 2. Replace the token inside with the token you have just gotten from the discord bot section.
 3. Run
     ```bash
-    npm run start
+    $ npm run start
     ```
