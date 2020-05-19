@@ -8,11 +8,11 @@
 ## To run locally:
 
 1. Run
-```
-$ cp config.example.js config.js
-```
+    ```bash
+    $ cp config.example.js config.js
+    ```
 2. Replace the token inside with the token you have just gotten from the discord bot section.
 3. Run
-```
-npm run start
-```
+    ```bash
+    npm run start
+    ```
