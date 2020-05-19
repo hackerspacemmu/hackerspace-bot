@@ -11,8 +11,8 @@
 ```
 $ cp config.example.js config.js
 ```
-4. Replace the token inside with the token you have just gotten from the discord bot section.
-5. Run
+2. Replace the token inside with the token you have just gotten from the discord bot section.
+3. Run
 ```
 npm run start
 ```
