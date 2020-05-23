@@ -20,12 +20,13 @@ client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const [commandName, ...args] = message.content.slice(prefix.length).trim().split(' ');
-	console.log(commandName, args);
-
 	const command = client.commands.get(commandName)
 		|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
+	if (!command) return;
+
 	try {
+		console.log(`${message.author.username} calls ${commandName} with ${args}`);
 		command.execute(message, args);
 	}
 	catch (error) {
