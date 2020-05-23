@@ -5,7 +5,6 @@ const hacktrack = {
 	description: 'shows hacktrack url and password',
 	aliases: ['hacktrack'],
 	usage: '[hacktrack]',
-	cooldown: 5,
 	execute(message, _args) {
 		const response = new Discord.MessageEmbed()
 			.setColor('#0099ff')
