@@ -22,7 +22,7 @@ client.on('message', message => {
 			.setColor('#0099ff')
 			.addFields(
 				{ name: 'URL', value: 'http://hacktrackmmu.herokuapp.com' },
-				{ name: 'Password', value: 'some password that you wont know' },
+				{ name: 'Password', value: process.env.HACKTRACK_PASSWORD },
 			);
 		message.channel.send(response);
 	}

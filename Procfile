@@ -1,1 +1,1 @@
-worker: npm run start
+hackybot: npm run start
