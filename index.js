@@ -41,7 +41,6 @@ client.on('message', message => {
 			message.channel.send('Something went wrong! We have already notify admin, please be patient.');
 		});
 	}
-	// TODO: write a generator to generate command files
 });
 
 client.login(token);
