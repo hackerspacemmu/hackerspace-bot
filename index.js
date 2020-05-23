@@ -9,7 +9,7 @@ const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
 client.once('ready', () => {
-	console.log('Hackerspace MMU never dies!');
+  console.log('Hackerspace MMU never dies!');
 });
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.command.js'));
@@ -17,30 +17,30 @@ load(commandFiles, client);
 
 
 client.on('message', message => {
-	// if foul words scold them and do nothing
-	if (mind_your_language(message)) return;
+  // if foul words scold them and do nothing
+  if (mind_your_language(message)) return;
 
-	// if not starting with ! command do nothing
-	if (!message.content.startsWith(prefix) || message.author.bot) return;
+  // if not starting with ! command do nothing
+  if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-	const [commandName, ...args] = message.content.slice(prefix.length).trim().split(' ');
-	const command = client.commands.get(commandName)
+  const [commandName, ...args] = message.content.slice(prefix.length).trim().split(' ');
+  const command = client.commands.get(commandName)
     || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
-	if (!command) return;
+  if (!command) return;
 
-	try {
-		console.log(`${message.author.username} calls ${commandName} with ${args.length ? args : 'no_args'}`);
-		command.execute(message, args);
-	}
-	catch (error) {
-		console.error(error);
-		client.users.fetch(process.env.OWNER_ID).then(_owner => {
-			// disable until we have role for hackybot dev for group mention
-			// message.channel.send('Something went wrong! We have already notify <@' + owner.id + '>, please be patient.');
-			message.channel.send('Something went wrong! We have already notify admin, please be patient.');
-		});
-	}
+  try {
+    console.log(`${message.author.username} calls ${commandName} with ${args.length ? args : 'no_args'}`);
+    command.execute(message, args);
+  }
+  catch (error) {
+    console.error(error);
+    client.users.fetch(process.env.OWNER_ID).then(_owner => {
+      // disable until we have role for hackybot dev for group mention
+      // message.channel.send('Something went wrong! We have already notify <@' + owner.id + '>, please be patient.');
+      message.channel.send('Something went wrong! We have already notify admin, please be patient.');
+    });
+  }
 });
 
 client.login(token);
