@@ -12,22 +12,22 @@ client.once('ready', () => {
   console.log('Hackerspace MMU never dies!');
 });
 
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.command.js'));
-load(commandFiles, client);
+const command_files = fs.readdirSync('./commands').filter(file => file.endsWith('.command.js'));
+load(command_files, client);
 
 
 client.on('message', message => {
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-  const [commandName, ...args] = message.content.slice(prefix.length).trim().split(' ');
-  const command = client.commands.get(commandName)
-    || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
+  const [command_name, ...args] = message.content.slice(prefix.length).trim().split(' ');
+  const command = client.commands.get(command_name)
+    || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(command_name));
 
   if (!command) return;
 
   try {
-    console.log(`${message.author.username} calls ${commandName} with ${args.length ? args : 'no_args'}`);
-    command.execute(message, args);
+    console.log(`${message.author.username} calls ${command_name} with ${args.length ? args : 'no_args'}`);
+    command.execute(message, command_name, args);
   }
   catch (error) {
     console.error(error);
