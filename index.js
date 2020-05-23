@@ -26,7 +26,7 @@ client.on('message', message => {
 	if (!command) return;
 
 	try {
-		console.log(`${message.author.username} calls ${commandName} with ${args}`);
+		console.log(`${message.author.username} calls ${commandName} with ${args.length ? args : 'no_args'}`);
 		command.execute(message, args);
 	}
 	catch (error) {
