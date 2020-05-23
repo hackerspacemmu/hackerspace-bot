@@ -3,7 +3,7 @@ import Discord from 'discord.js';
 
 // TODO: implements dotenv/someother env loader to place tokens and some other information
 import { prefix, token } from './config.js';
-import { load, mind_your_language } from './utils.js';
+import { load } from './utils.js';
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -17,10 +17,6 @@ load(commandFiles, client);
 
 
 client.on('message', message => {
-  // if foul words scold them and do nothing
-  if (mind_your_language(message)) return;
-
-  // if not starting with ! command do nothing
   if (!message.content.startsWith(prefix) || message.author.bot) return;
 
   const [commandName, ...args] = message.content.slice(prefix.length).trim().split(' ');
