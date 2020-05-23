@@ -6,7 +6,8 @@
 	},
 	"parserOptions": {
 		"ecmaVersion": 2019,
-		"sourceType": "module"
+		"sourceType": "module",
+		"allowImportExportEverywhere": true
 	},
 	"rules": {
 		"brace-style": ["error", "stroustrup", { "allowSingleLine": true }],
@@ -29,6 +30,7 @@
 		"no-shadow": ["error", { "allow": ["err", "resolve", "reject"] }],
 		"no-trailing-spaces": ["error"],
 		"no-var": "error",
+		"no-unused-vars": ["error", { "argsIgnorePattern": "^_"}],
 		"object-curly-spacing": ["error", "always"],
 		"prefer-const": "error",
 		"quotes": ["error", "single"],
