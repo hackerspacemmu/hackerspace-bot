@@ -16,3 +16,11 @@
     ```bash
     $ npm run start
     ```
+
+## Development
+
+To create a new command of command_name
+
+```bash
+$ ./program.sh <command_name>
+```
