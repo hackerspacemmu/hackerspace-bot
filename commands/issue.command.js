@@ -6,7 +6,6 @@ const issue = {
   aliases: ['issue', 'bug', 'feature'],
   usage: '[issue]',
   execute(message, command, args) {
-    // logic and args parsing here
     // considering a post request in the future
     args = args ? args : 'Feature request';
     const template = () => {
