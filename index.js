@@ -34,8 +34,9 @@ client.on('message', message => {
     }
   } catch (error) {
     console.error(error);
+    // TODO : handle custom raise error to remove all the failing case if else.
     client.users.fetch(process.env.OWNER_ID).then(_owner => {
-      // disable until we have role for hackybot dev for group mention
+      // TODO : disable until we have role for hackybot dev for group mention
       // message.channel.send('Something went wrong! We have already notify <@' + owner.id + '>, please be patient.');
       message.channel.send('Something went wrong! We have already notify admin, please be patient.');
     });
