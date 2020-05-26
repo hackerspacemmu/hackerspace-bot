@@ -14,7 +14,6 @@ export const getUserFromMention = (message, mention) => {
     if (mention.startsWith('!')) {
       mention = mention.slice(1);
     }
-    console.log(mention)
     return message.guild.members.cache.get(mention);
   }
 }
@@ -28,7 +27,6 @@ export const getRoleFromMention= (message, mention) => {
     if (mention.startsWith('&')) {
       mention = mention.slice(1);
     }
-    console.log(mention)
     return message.guild.roles.cache.get(mention);
   }
 }
