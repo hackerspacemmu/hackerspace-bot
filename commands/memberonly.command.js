@@ -6,8 +6,8 @@ const memberonly = {
   aliases: ['memberonly'],
   usage: '[memberonly]',
   permission: [role.member],
-  execute(message, args) {
-    message.channel.send((args.length)? args.join(' ') : 'No arg');
+  execute(message, command, args) {
+    message.channel.send((args.length) ? args.join(' ') : 'No arg');
   },
 };
 
