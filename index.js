@@ -27,10 +27,12 @@ client.on('message', message => {
 
   try {
     console.log(`${message.author.username} calls ${commandName} with ${args.length ? args : 'no_args'}`);
-    if (!command.permission || message.member.roles.cache.find(r => command.permission.includes(r.id))) {command.execute(message, args);}
-    else {message.channel.send('<@' + message.author.id + '> ,you are not allow to do that.');}
-  }
-  catch (error) {
+    if (!command.permission || message.member.roles.cache.find(r => command.permission.includes(r.id))) {
+      command.execute(message, commandName, args);
+    } else {
+      message.channel.send('<@' + message.author.id + '> ,you are not allow to do that.');
+    }
+  } catch (error) {
     console.error(error);
     client.users.fetch(process.env.OWNER_ID).then(_owner => {
       // disable until we have role for hackybot dev for group mention
