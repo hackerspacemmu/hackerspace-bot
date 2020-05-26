@@ -26,8 +26,11 @@ client.on('message', message => {
 	if (!command) return;
 
 	try {
-		console.log(`${message.author.username} calls ${commandName} with ${args.length ? args : 'no_args'}`);
-		command.execute(message, args);
+    console.log(`${message.author.username} calls ${commandName} with ${args.length ? args : 'no_args'}`);
+    if (!command.permission || message.member.roles.cache.find(r => command.permission.includes(r.id)))
+      command.execute(message, args);
+    else
+      message.channel.send('<@' + message.author.id + '> ,you are not allow to do that.');
 	}
 	catch (error) {
 		console.error(error);
