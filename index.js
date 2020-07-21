@@ -1,9 +1,17 @@
 import fs from 'fs';
 import Discord from 'discord.js';
 
-// TODO: implements dotenv/someother env loader to place tokens and some other information
 import { prefix, token } from './config.js';
 import { load } from './utils.js';
+
+import * as admin from 'firebase-admin';
+
+admin.initializeApp({
+  credential: admin.credential.cert(
+    JSON.parse(Buffer.from(process.env.FIREBASE_CONFIG_BASE64, 'base64')),
+  ),
+  databaseURL: 'https://hackerspace-bot.firebaseio.com',
+});
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -34,14 +42,12 @@ client.on('message', message => {
     }
   } catch (error) {
     console.error(error);
-    // TODO : handle custom raise error to remove all the failing case if else.
     client.users.fetch(process.env.OWNER_ID).then(_owner => {
       // TODO : disable until we have role for hackybot dev for group mention
       // message.channel.send('Something went wrong! We have already notify <@' + owner.id + '>, please be patient.');
       message.channel.send('Something went wrong! We have already notify admin, please be patient.');
     });
   }
-  // TODO: write a generator to generate command files
 });
 
 client.login(token);

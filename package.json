@@ -19,7 +19,8 @@
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
     "eslint": "^7.0.0",
-    "esm": "^3.2.25"
+    "esm": "^3.2.25",
+    "firebase-admin": "^9.0.0"
   },
   "devDependencies": {
     "eslint-plugin-prettier": "^3.1.3",
