@@ -1,6 +1,7 @@
-import fs from 'fs';
-import Discord from 'discord.js';
+import { start_web } from './web/index.js';
+import { start_bot } from './bot/index.js';
 
+<<<<<<< HEAD
 import { prefix, token } from './config.js';
 import { load } from './utils.js';
 
@@ -51,3 +52,7 @@ client.on('message', message => {
 });
 
 client.login(token);
+=======
+start_bot();
+start_web();
+>>>>>>> a039bf4c0b598eb0dc05e23630625b539f394ee0

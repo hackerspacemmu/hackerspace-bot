@@ -1,4 +1,4 @@
-import { role } from '../config.js';
+import { role } from '../../config.js';
 
 const memberonly = {
   name: 'memberonly',
