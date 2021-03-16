@@ -11,6 +11,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
+    "start_bot": "node ./bot/index.js",
+    "start_web": "node ./web/index.js",
     "dev": "nodemon index.js"
   },
   "author": "",
