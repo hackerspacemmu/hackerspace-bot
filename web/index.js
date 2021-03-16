@@ -9,6 +9,4 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, pages_directory, 'index.html'));
 });
 
-export async function start_web() {
-  app.listen(3000, () => console.log('Hackerspace MMU web server started'));
-}
+app.listen(3000, () => console.log('Hackerspace MMU web server started'));

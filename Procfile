@@ -1,1 +1,2 @@
-web: npm run start
+web: npm run start_web
+worker: npm run start_bot
