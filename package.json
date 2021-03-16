@@ -20,12 +20,8 @@
     "dotenv": "^8.2.0",
     "eslint": "^7.0.0",
     "esm": "^3.2.25",
-<<<<<<< HEAD
-    "firebase-admin": "^9.0.0"
-=======
     "express": "^4.17.1",
     "pg": "^8.5.1"
->>>>>>> a039bf4c0b598eb0dc05e23630625b539f394ee0
   },
   "devDependencies": {
     "eslint-plugin-prettier": "^3.1.3",
