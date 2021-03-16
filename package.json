@@ -20,7 +20,8 @@
     "dotenv": "^8.2.0",
     "eslint": "^7.0.0",
     "esm": "^3.2.25",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^8.5.1"
   },
   "devDependencies": {
     "eslint-plugin-prettier": "^3.1.3",
